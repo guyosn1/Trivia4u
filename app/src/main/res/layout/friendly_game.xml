@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_friendly_match"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"    android:padding="24dp"
+    android:background="@color/white"
+    tools:context=".FriendlyMatchActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tv_friendly_match_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pick a difficulty"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tv_friendly_match_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose the difficulty level:"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Buttons for difficulty levels -->
+    <Button
+        android:id="@+id/btn_easy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Easy"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Medium"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_hard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hard"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_professional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Professional"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_expert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expert"
+        android:textColor="@color/black" />
+
+</LinearLayout>
