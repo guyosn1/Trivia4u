@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@drawable/entrance_background"
     android:orientation="vertical">
 
 
@@ -15,6 +16,7 @@
         android:text="Welcome to trivia!"
         android:textSize="45dp"
         android:layout_gravity="center"
+        android:textColor="@color/black"
         android:layout_marginTop="70dp" />
 
     <Button
@@ -36,6 +38,4 @@
         android:id="@+id/btnlogin" />
 
 
-
-
-</LinearLayout>
+    </LinearLayout>
