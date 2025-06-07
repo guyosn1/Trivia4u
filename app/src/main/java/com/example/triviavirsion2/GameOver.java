@@ -18,7 +18,9 @@ public class GameOver extends AppCompatActivity {
 
         Button backToHome = findViewById(R.id.backToHome);
         backToHome.setOnClickListener(v -> {
-            startActivity(new Intent(GameOver.this, LandingPage.class));
+            Intent i = new Intent(GameOver.this, LandingPage.class);
+            i.putExtra("score", score);
+            startActivity(i);
             finish();
         });
     }
