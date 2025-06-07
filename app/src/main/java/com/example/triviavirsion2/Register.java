@@ -19,15 +19,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.TextView;
 
-
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.Objects;
 
 
 public class Register extends AppCompatActivity {
@@ -35,7 +32,7 @@ public class Register extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private DatabaseReference database;
-    private EditText signupEmail, signupPassword, retypepassword;
+    private EditText signupEmail, signupPassword, retypepassword, username;
     private Button signupButton, buttonAddPicture, buttonUpload;
     private ImageView imageView;
     private Bitmap php;
@@ -48,7 +45,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.register);
 
         auth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance("https://trivia-project-8533a-default-rtdb.firebaseio.com/").getReference().child("users");
+        database = FirebaseDatabase.getInstance("https://trivia-project-8533a-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("users");
 
         signupEmail = findViewById(R.id.regemail);
         signupPassword = findViewById(R.id.regpassword);
@@ -57,6 +54,7 @@ public class Register extends AppCompatActivity {
         imageView = findViewById(R.id.image_view);
         buttonAddPicture = findViewById(R.id.button_add_picture);
         buttonUpload = findViewById(R.id.button_upload);
+        username = findViewById(R.id.editTextUsername);
         php = null;
 
         initializeActivityResult();
@@ -73,7 +71,7 @@ public class Register extends AppCompatActivity {
 
             String email = signupEmail.getText().toString();
             String password = signupPassword.getText().toString();
-            String password2 = retypepassword.getText().toString();
+            String name = username.getText().toString();
 
 
             if (php == null) {
@@ -95,13 +93,18 @@ public class Register extends AppCompatActivity {
                 signupPassword.setError("Password must be at least 6 characters.");
                 return;
             }
+            if (name.isEmpty())
+            {
+                username.setError("Enter a valid email.");
+                return;
+            }
             if (!retypepassword.getText().toString().equals(password)) {
                 retypepassword.setError("Passwords do not match.");
                 return;
             }
 
 
-            User newUser = new User(email, password, email, php);
+            User newUser = new User(email, password, name, php);
 
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
@@ -159,7 +162,6 @@ public class Register extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 }
 

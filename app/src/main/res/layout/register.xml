@@ -41,6 +41,14 @@
             android:hint="repeat password"
             android:textSize="30dp" />
 
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="username"
+            android:textSize="30dp" />
+
         <!-- Add Picture Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_add_picture"
