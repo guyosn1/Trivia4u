@@ -11,6 +11,11 @@ public class User extends Auth {
     String picture;
     int score;
 
+    public User()
+    {
+        super();
+    }
+
     public User(String email, String password, String username, int score, String picture) {
         super(email, password);
         this.username = username;
@@ -24,6 +29,15 @@ public class User extends Auth {
         this.score = score;
         setPictureAsString(picture);
     }
+
+
+
+
+    /**
+     * Converts a Bitmap image to a Base64-encoded PNG string and sets it as the profile picture.
+     *
+     * @param php Bitmap image to encode
+     */
     public void setPictureAsString(Bitmap php) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         php.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);

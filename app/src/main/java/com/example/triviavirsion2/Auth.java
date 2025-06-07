@@ -3,6 +3,10 @@ package com.example.triviavirsion2;
 public class Auth {
     String email;
     String password;
+
+    public Auth() {
+
+    }
     public Auth(String email, String password) {
 
         this.email = email;
