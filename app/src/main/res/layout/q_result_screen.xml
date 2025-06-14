@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:gravity="center"
-    android:background="@android:color/white">
+    android:background="@drawable/result_screen"
+    >
 
     <TextView
         android:id="@+id/resultText"
@@ -16,7 +17,8 @@
         android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="32dp"
+        />
 
     <LinearLayout
         android:id="@+id/prizeList"

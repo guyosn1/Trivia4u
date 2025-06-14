@@ -23,7 +23,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="450dp"
         android:backgroundTint="#00BCD4"
         android:text="Register"
         android:textSize="30dp"

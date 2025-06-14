@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:gravity="center_horizontal"
-    android:background="@drawable/landing_page_background"
+    android:background="@drawable/background__millionaire_ingame"
     >
 
     <TextView
@@ -15,31 +15,41 @@
         android:text="Question will appear here"
         android:textSize="24sp"
         android:layout_marginBottom="24dp"
+        android:layout_marginTop="220dp"
         />
 
     <Button
         android:id="@+id/optionA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Option A" />
+        android:text="Option A"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"/>
+
 
     <Button
         android:id="@+id/optionB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Option B" />
+        android:text="Option B"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/optionC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Option C" />
+        android:text="Option C"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/optionD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Option D" />
+        android:text="Option D"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/timerTextView"
@@ -47,7 +57,7 @@
         android:layout_height="wrap_content"
         android:text="Time left: 20"
         android:textSize="18sp"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="24dp"/>
 
 
     <LinearLayout
@@ -61,23 +71,29 @@
         <Button
             android:id="@+id/btnFiftyFifty"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_weight="1"
-            android:text="50/50" />
+            android:text="50/50"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/btnPhoneAFriend"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Phone a Friend" />
+            android:text="Phone a Friend"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/btnSkip"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_weight="1"
-            android:text="Skip" />
+            android:text="Skip"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </LinearLayout>

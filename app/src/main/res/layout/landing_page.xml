@@ -84,6 +84,15 @@
             android:text="Settings"
             android:textSize="24sp"
             android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day streak: "
+            android:textSize="40dp"
+            android:layout_marginTop="60dp"
+            android:textColor="#FFC107"/>
+
     </LinearLayout>
 </ScrollView>
 
