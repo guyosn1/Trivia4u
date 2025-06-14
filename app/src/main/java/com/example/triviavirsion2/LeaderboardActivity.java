@@ -23,12 +23,17 @@ public class LeaderboardActivity extends AppCompatActivity {
 
     private RecyclerView leaderboardRecyclerView;
     private LeaderboardAdapter adapter;
+    DatabaseReference database;
+
+    private static final int MAX_LEADERBOARD = 15;
     private List<User> userList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
+
+        database = FirebaseDatabase.getInstance("https://trivia-project-8533a-default-rtdb.europe-west1.firebasedatabase.app/").getReference();
 
         leaderboardRecyclerView = findViewById(R.id.leaderboardRecyclerView);
         leaderboardRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -37,7 +42,7 @@ public class LeaderboardActivity extends AppCompatActivity {
     }
 
     private void fetchLeaderboard() {
-        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("users");
+        DatabaseReference dbRef = database.child("users");
 
         dbRef.orderByChild("score").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -56,16 +61,12 @@ public class LeaderboardActivity extends AppCompatActivity {
                 }
 
                 // Sort by score descending
-                Collections.sort(userList, new Comparator<User>() {
-                    @Override
-                    public int compare(User u1, User u2) {
-                        return Integer.compare(u2.getScore(), u1.getScore());
-                    }
-                });
+                Collections.sort(userList, (u1, u2) ->
+                        Integer.compare(u2.getScore(), u1.getScore()));
 
                 // Limit to top 10
-                if (userList.size() > 10) {
-                    userList = userList.subList(0, 10);
+                if (userList.size() > MAX_LEADERBOARD) {
+                    userList = userList.subList(0, MAX_LEADERBOARD);
                 }
 
                 adapter = new LeaderboardAdapter(userList);

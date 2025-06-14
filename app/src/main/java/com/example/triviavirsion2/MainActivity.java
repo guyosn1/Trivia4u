@@ -21,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-     //   FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-     //   if (user != null) {
-     //       // User is already logged in, navigate to LandingPage
-      //      Intent intent = new Intent(MainActivity.this, LandingPage.class);
-       //     startActivity(intent);
-       //     finish();
-      //  }
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is already logged in, navigate to LandingPage
+            Intent intent = new Intent(MainActivity.this, LandingPage.class);
+            startActivity(intent);
+            finish();
+        }
 
 
         loginButton = findViewById(R.id.btnlogin);

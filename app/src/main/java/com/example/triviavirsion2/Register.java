@@ -45,7 +45,10 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.register);
 
         auth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance("https://trivia-project-8533a-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("users");
+        database = FirebaseDatabase
+                .getInstance("https://trivia-project-8533a-default-rtdb.europe-west1.firebasedatabase.app/")
+                .getReference()
+                .child("users");
 
         signupEmail = findViewById(R.id.regemail);
         signupPassword = findViewById(R.id.regpassword);

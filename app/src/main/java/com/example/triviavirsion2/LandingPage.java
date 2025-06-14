@@ -88,7 +88,6 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
         } else if (view == btnleaderboard) {
             startActivity(new Intent(LandingPage.this, LeaderboardActivity.class));
         } else if (view == btnaddfriends) {
-            // ✅ Fixed: correct class name is AddFriends
             startActivity(new Intent(LandingPage.this, AddFriends.class));
         } else if (view == btnplaygame) {
             startActivity(new Intent(LandingPage.this, PlayGame.class));

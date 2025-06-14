@@ -1,5 +1,6 @@
 package com.example.triviavirsion2;
 
+import android.content.BroadcastReceiver;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.ArrayAdapter;
@@ -32,7 +33,7 @@ public class AddFriends extends AppCompatActivity  {
     private FirebaseAuth auth;
     private DatabaseReference rootRef;
     private String currentUserId;
-    private String currentUsername;
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,58 +45,60 @@ public class AddFriends extends AppCompatActivity  {
         listViewFriendRequests = findViewById(R.id.listViewFriendRequests);
 
         auth = FirebaseAuth.getInstance();
-        rootRef = FirebaseDatabase.getInstance().getReference();
+        rootRef = FirebaseDatabase.getInstance("https://trivia-project-8533a-default-rtdb.europe-west1.firebasedatabase.app/")
+                .getReference();
         currentUserId = auth.getCurrentUser().getUid();
 
         friendRequestsList = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, friendRequestsList);
         listViewFriendRequests.setAdapter(adapter);
 
-        loadCurrentUsername();
+        loadCurrentUser();
         loadFriendRequests();
 
         buttonSendRequest.setOnClickListener(v -> {
-            String friendUsername = editTextFriendMail.getText().toString().trim();
-            if (TextUtils.isEmpty(friendUsername)) {
-                Toast.makeText(AddFriends.this, "Please enter a username", Toast.LENGTH_SHORT).show();
+            String friendEmail = editTextFriendMail.getText().toString().trim();
+            if (TextUtils.isEmpty(friendEmail)) {
+                Toast.makeText(AddFriends.this, "Please enter an Email", Toast.LENGTH_SHORT).show();
                 return;
             }
-            sendFriendRequest(friendUsername);
+            sendFriendRequest(friendEmail);
         });
 
         listViewFriendRequests.setOnItemClickListener((parent, view, position, id) -> {
-            String requesterUsername = friendRequestsList.get(position);
-            acceptFriendRequest(requesterUsername);
+            String requesterEmail = friendRequestsList.get(position);
+            acceptFriendRequest(requesterEmail);
+            friendRequestsList.remove(position);
+            adapter.notifyDataSetChanged();
+
         });
     }
 
-    private void loadCurrentUsername() {
-        rootRef.child("Users").child(currentUserId).child("username")
+    private void loadCurrentUser() {
+        rootRef.child("users").child(currentUserId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        currentUsername = snapshot.getValue(String.class);
+                        currentUser = snapshot.getValue(User.class);
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(AddFriends.this, "Failed to load username", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddFriends.this, "Failed to load user", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
     private void loadFriendRequests() {
-        rootRef.child("friend_requests").child(currentUserId)
+        rootRef.child("friend_requests").orderByChild("receiverUid").equalTo(currentUserId)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         friendRequestsList.clear();
                         for (DataSnapshot reqSnapshot : snapshot.getChildren()) {
-                            String requesterUsername = reqSnapshot.child("username").getValue(String.class);
-                            String status = reqSnapshot.child("status").getValue(String.class);
-                            if ("pending".equals(status) && requesterUsername != null) {
-                                friendRequestsList.add(requesterUsername);
-                            }
+                            var req = reqSnapshot.getValue(FriendRequest.class);
+                            String requesterEmail = req.getSenderEmail();
+                            friendRequestsList.add(requesterEmail);
                         }
                         adapter.notifyDataSetChanged();
                     }
@@ -107,22 +110,26 @@ public class AddFriends extends AppCompatActivity  {
                 });
     }
 
-    private void sendFriendRequest(String friendUsername) {
-        rootRef = FirebaseDatabase.getInstance().getReference("users");
-        Query q = rootRef.orderByChild("email").equalTo(editTextFriendMail.getText().toString());
-        q.addListenerForSingleValueEvent(new ValueEventListener() {
+    private void sendFriendRequest(String friendEmail) {
+        var userRef = rootRef.child("users");
+        userRef.orderByChild("email").equalTo(friendEmail).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    DataSnapshot userSnapshot = snapshot.getChildren().iterator().next();
-                    String userUID = userSnapshot.getKey();
-                    FirebaseUser me = FirebaseAuth.getInstance().getCurrentUser();
-                    String myUID = me.getUid();
+                if (snapshot.exists()) {
+                    DataSnapshot userSnap = snapshot.getChildren().iterator().next();
+                    User u = userSnap.getValue(User.class);
 
-                    DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
-                    usersRef.child(userUID).child("friendRequest").child(myUID).setValue(true);
-                    usersRef.child(myUID).child("sentFriendRequest").child(userUID).setValue(true);
+                    // Check if user is in friends list
+                    for (DataSnapshot friendSnapshot : userSnap.child("friends").getChildren()) {
+                        if (friendSnapshot.getValue(String.class).equals(currentUserId)) {
+                            Toast.makeText(AddFriends.this, "User is already in your friends list", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                    }
 
+                    // Send the request
+                    FriendRequest fr = new FriendRequest(currentUserId, u.getUid(), currentUser.getEmail());
+                    rootRef.child("friend_requests").child(fr.getKey()).setValue(fr);
                 }
             }
 
@@ -131,38 +138,62 @@ public class AddFriends extends AppCompatActivity  {
 
             }
         });
-
     }
 
-    private void acceptFriendRequest(String requesterUsername) {
-        rootRef.child("Users").orderByChild("username").equalTo(requesterUsername)
+    private void acceptFriendRequest(String requesterEmail) {
+        // Get the user
+        rootRef.child("users").orderByChild("email").equalTo(requesterEmail)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-                            for (DataSnapshot userSnapshot : snapshot.getChildren()) {
-                                String requesterId = userSnapshot.getKey();
+                        User u = snapshot.getChildren().iterator().next().getValue(User.class);
+                        // Add the user to the current user's friends
+                        var uidToAdd = u.getUid();
+                        rootRef.child("users").child(currentUserId)
+                                .child("friends")
+                                .push()
+                                .setValue(uidToAdd);
+                        rootRef.child("users").child(uidToAdd)
+                                .child("friends")
+                                .push()
+                                .setValue(currentUserId);
 
-                                // Add both users to each other's friends list
-                                rootRef.child("friends").child(currentUserId).child(requesterId).setValue(true);
-                                rootRef.child("friends").child(requesterId).child(currentUserId).setValue(true);
+                        rootRef.child("friend_requests")
+                                .orderByChild("key")
+                                .equalTo(uidToAdd + "_" + currentUserId)
+                                .addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        snapshot.getRef().removeValue();
+                                    }
 
-                                // Update the friend request status (or remove it)
-                                rootRef.child("friend_requests").child(currentUserId).child(requesterId)
-                                        .child("status").setValue("accepted");
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+                                    }
+                                });
 
-                                Toast.makeText(AddFriends.this, "Friend request accepted", Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
-                            Toast.makeText(AddFriends.this, "Requester not found", Toast.LENGTH_SHORT).show();
-                        }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(AddFriends.this, "Error accepting request", Toast.LENGTH_SHORT).show();
+
                     }
                 });
+
+
     }
 }
 
+/**
+ * users
+ *      uid
+ *          ...
+ *          friends
+ *              ... (random key: uid)
+ * friend_requests
+ *      key
+ *          senderUid: uid
+ *          senderEmail: email
+ *          receiverUid: uid
+ *      ...
+ */
