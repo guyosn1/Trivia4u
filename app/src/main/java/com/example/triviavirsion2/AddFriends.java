@@ -37,6 +37,7 @@ public class AddFriends extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.add_friends);
 
         editTextFriendMail = findViewById(R.id.editTextFriendUsername);
         buttonSendRequest = findViewById(R.id.buttonSendRequest);
