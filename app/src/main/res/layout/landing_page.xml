@@ -31,7 +31,9 @@
             android:text="Your score:"
             android:textSize="24sp"
             android:textAlignment="center"
-            android:textColor="#333333" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"/>
+
 
         <Button
             android:id="@+id/btnplaygame"

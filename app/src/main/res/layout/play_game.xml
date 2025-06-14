@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@drawable/landing_page_background"
+    >
 
     <TextView
         android:id="@+id/questionTextView"
@@ -12,7 +14,8 @@
         android:layout_height="wrap_content"
         android:text="Question will appear here"
         android:textSize="24sp"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginBottom="24dp"
+        />
 
     <Button
         android:id="@+id/optionA"

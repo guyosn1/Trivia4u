@@ -5,13 +5,17 @@ import android.graphics.BitmapFactory;
 import android.util.Base64;
 
 import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class User extends Auth {
     private String username;
     private String picture;
     private int score;
     private String uid;
+    private Map<String,Boolean> friendRequest;
 
+    private Map<String,Boolean> sentFriendRequest;
     public User()
     {
         super();
@@ -23,6 +27,9 @@ public class User extends Auth {
         this.score = 0;
         this.picture = picture;
         this.uid = "NO_UID";
+        friendRequest = new HashMap<>();
+        sentFriendRequest = new HashMap<>();
+
     }
 
     public User(String email, String password, String username, Bitmap picture) {
@@ -31,6 +38,32 @@ public class User extends Auth {
         this.score = 0;
         setPictureAsString(picture);
         this.uid = "NO_UID";
+        friendRequest = new HashMap<>();
+        sentFriendRequest = new HashMap<>();
+    }
+
+    public void addFriendRequest(String uid) {
+        this.friendRequest.put(uid, true);
+    }
+
+    public void removeFriendRequest(String uid) {
+        this.friendRequest.remove(uid);
+    }
+
+    public void addSentFriendRequest(String uid) {
+        this.sentFriendRequest.put(uid, true);
+    }
+
+    public void removeSentFriendRequest(String uid) {
+        this.sentFriendRequest.remove(uid);
+    }
+
+    public void setFriendRequest(Map<String, Boolean> map) {
+        this.friendRequest = map;
+    }
+
+    public void setSentFriendRequest(Map<String, Boolean> map) {
+        this.sentFriendRequest = map;
     }
 
 

@@ -31,10 +31,13 @@
         <activity android:name=".Register" />
         <activity android:name=".LandingPage" />
         <activity android:name=".AddFriends" />
-        <activity android:name=".Leaderboard" />
         <activity android:name=".PlayGame" />
         <activity android:name=".QResultScreen" />
         <activity android:name=".GameOver" />
+        <activity android:name=".LeaderboardActivity" />
+
+
+
 
 
 
