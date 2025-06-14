@@ -10,7 +10,7 @@
         android:id="@+id/editTextFriendUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter friend's username"
+        android:hint="Enter friend's Email"
         android:inputType="textPersonName"
         android:minHeight="48dp" />
 
