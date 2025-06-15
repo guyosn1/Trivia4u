@@ -25,8 +25,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Show Us Your Knowledge"
-                android:textSize="30dp"
+                android:text="@string/show_us_your_knowledge"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:textColor="#00BCD4" />
 
@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Your score:"
+                android:text="@string/your_score"
                 android:textSize="24sp"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:backgroundTint="#00BCD4"
-                android:text="play game"
+                android:text="@string/play_game"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF" />
 
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#00BCD4"
-                android:text="Leaderboard"
+                android:text="@string/leaderboard"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF" />
 
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#00BCD4"
-                android:text="Friendly Match"
+                android:text="@string/friendly_match"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF" />
 
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#00BCD4"
-                android:text="Add Friends"
+                android:text="@string/add_friends"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF" />
 
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#00BCD4"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF" />
 

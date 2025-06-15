@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name"> טריוויה 2</string>
+    <string name="app_name">גרסת טריוויה 2</string>
     <string name="music">מוזיקה</string>
     <string name="sound_effects">אפקטים קוליים</string>
     <string name="vibration">רטט</string>
     <string name="how_to_play">איך לשחק</string>
     <string name="log_out">התנתק</string>
     <string name="settings">הגדרות</string>
+    <string name="language">שפה</string>
+    <string name="register">הרשם</string>
+    <string name="email">אימייל</string>
+    <string name="password">סיסמה</string>
+    <string name="repeat_password">חזור על הסיסמה</string>
+    <string name="username">שם משתמש</string>
+    <string name="take_picture">צלם תמונה</string>
+    <string name="upload_picture">העלה תמונה</string>
+    <string name="have_an_account_log_in">כבר יש חשבון? התחבר</string>
+    <string name="sign_up">הרשם</string>
+    <string name="log_in">התחבר</string>
+    <string name="happy_to_see_you_again">שמחים לראותך שוב!</string>
+    <string name="emaillog">אימייל</string>
+    <string name="log_in2">התחבר</string>
+    <string name="show_us_your_knowledge">הראה לנו את הידע שלך</string>
+    <string name="play_game">שחק משחק</string>
+    <string name="leaderboard">טבלת מובילים</string>
+    <string name="friendly_match">משחק ידידותי</string>
+    <string name="add_friends">הוסף חברים</string>
+    <string name="your_score">הניקוד שלך:</string>
+    <string name="game_over">המשחק נגמר</string>
+    <string name="back_to_home">חזרה לדף הבית</string>
+    <string name="enter_friend_s_email">הכנס את האימייל של החבר</string>
+    <string name="friend_requests">בקשות חברות:</string>
+    <string name="welcome_to_trivia">ברוכים הבאים לטריוויה!</string>
+    <string name="registerMain">הרשם</string>
+    <string name="login">התחבר</string>
+    <string name="home">דף הבית</string>
+    <string name="sign_out">התנתק</string>
+
 </resources>
+
+

@@ -8,21 +8,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
+        android:text="@string/log_in"
         android:layout_gravity="center"
-        android:textSize="80dp"
+        android:textSize="80sp"
         android:textColor="@color/white"/>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Happy to see you again!"
-        android:textSize="30dp"
+        android:text="@string/happy_to_see_you_again"
+        android:textSize="30sp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:textColor="@color/white"/>
-    />
 
     <EditText
         android:layout_width="match_parent"
@@ -30,7 +29,7 @@
         android:layout_marginTop="320dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="email"
+        android:hint="@string/emaillog"
         android:id="@+id/loginemail"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"/>
@@ -42,7 +41,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="password"
+        android:hint="@string/password"
         android:id="@+id/loginpassword"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"/>
@@ -54,8 +53,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="log in"
-        android:textSize="30dp"
+        android:text="@string/log_in2"
+        android:textSize="30sp"
         android:id="@+id/btnlogin"
         />
 

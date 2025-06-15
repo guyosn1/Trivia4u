@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AddFriends extends AppCompatActivity  {
+public class AddFriends extends BaseActivity  {
 
     private EditText editTextFriendMail;
     private Button buttonSendRequest;

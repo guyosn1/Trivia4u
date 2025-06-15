@@ -17,7 +17,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class LandingPage extends AppCompatActivity implements View.OnClickListener {
+import java.text.MessageFormat;
+
+public class LandingPage extends BaseActivity implements View.OnClickListener {
 
     Button btnsettings, btnleaderboard, btnaddfriends, btnplaygame;
     TextView landing_score, streakTextView;
@@ -71,7 +73,7 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
                     newScore += addedScore;
                     ref.setValue(newScore);
                 }
-                landing_score.setText("Your score: " + newScore);
+                landing_score.setText(MessageFormat.format("{0} {1}", getString(R.string.your_score), newScore));
             }
 
             @Override

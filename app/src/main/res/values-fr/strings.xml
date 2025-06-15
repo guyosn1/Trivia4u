@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Version Trivia 2</string>
+    <string name="music">Musique</string>
+    <string name="sound_effects">Effets sonores</string>
+    <string name="vibration">Vibration</string>
+    <string name="how_to_play">Comment jouer</string>
+    <string name="log_out">Déconnexion</string>
+    <string name="settings">Paramètres</string>
+    <string name="language">Langue</string>
+    <string name="register">Sinscrire</string>
+    <string name="email">E-mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="repeat_password">Répéter le mot de passe</string>
+    <string name="username">Nom dutilisateur</string>
+    <string name="take_picture">Prendre une photo</string>
+    <string name="upload_picture">Télécharger une photo</string>
+    <string name="have_an_account_log_in">Vous avez un compte ? Connectez-vous</string>
+    <string name="sign_up">Sinscrire</string>
+    <string name="log_in">Se connecter</string>
+    <string name="happy_to_see_you_again">Heureux de vous revoir !</string>
+    <string name="emaillog">E-mail</string>
+    <string name="log_in2">Se connecter</string>
+    <string name="show_us_your_knowledge">Montrez-nous vos connaissances</string>
+    <string name="play_game">Jouer</string>
+    <string name="leaderboard">Classement</string>
+    <string name="friendly_match">Match amical</string>
+    <string name="add_friends">Ajouter des amis</string>
+    <string name="your_score">Votre score :</string>
+    <string name="game_over">Jeu terminé</string>
+    <string name="back_to_home">Retour à laccueil</string>
+    <string name="enter_friend_s_email">Entrez lemail de lami</string>
+    <string name="friend_requests">Demandes damis :</string>
+    <string name="welcome_to_trivia">Bienvenue à trivia !</string>
+    <string name="registerMain">Sinscrire</string>
+    <string name="login">Se connecter</string>
+    <string name="home">Accueil</string>
+    <string name="sign_out">se déconnecter</string>
+
+</resources>

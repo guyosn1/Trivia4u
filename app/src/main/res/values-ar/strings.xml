@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">نسخة المسابقة 2</string>
+    <string name="music">الموسيقى</string>
+    <string name="sound_effects">مؤثرات صوتية</string>
+    <string name="vibration">اهتزاز</string>
+    <string name="how_to_play">كيفية اللعب</string>
+    <string name="log_out">تسجيل الخروج</string>
+    <string name="settings">الإعدادات</string>
+    <string name="language">اللغة</string>
+    <string name="register">تسجيل</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="repeat_password">أعد كلمة المرور</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="take_picture">التقاط صورة</string>
+    <string name="upload_picture">رفع صورة</string>
+    <string name="have_an_account_log_in">هل لديك حساب؟ تسجيل الدخول</string>
+    <string name="sign_up">اشتراك</string>
+    <string name="log_in">تسجيل الدخول</string>
+    <string name="happy_to_see_you_again">سعيد برؤيتك مجدداً!</string>
+    <string name="emaillog">البريد الإلكتروني</string>
+    <string name="log_in2">تسجيل الدخول</string>
+    <string name="show_us_your_knowledge">أرنا معرفتك</string>
+    <string name="play_game">العب اللعبة</string>
+    <string name="leaderboard">قائمة المتصدرين</string>
+    <string name="friendly_match">مباراة ودية</string>
+    <string name="add_friends">أضف أصدقاء</string>
+    <string name="your_score">نتيجتك:</string>
+    <string name="game_over">انتهت اللعبة</string>
+    <string name="back_to_home">العودة إلى الصفحة الرئيسية</string>
+    <string name="enter_friend_s_email">أدخل بريد الصديق الإلكتروني</string>
+    <string name="friend_requests">طلبات صداقة:</string>
+    <string name="welcome_to_trivia">مرحباً بك في المسابقة!</string>
+    <string name="registerMain">تسجيل</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="sign_out">تسجيل الخروج</string>
+</resources>

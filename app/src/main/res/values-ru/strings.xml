@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Викторина версия 2</string>
+    <string name="music">Музыка</string>
+    <string name="sound_effects">Звуковые эффекты</string>
+    <string name="vibration">Вибрация</string>
+    <string name="how_to_play">Как играть</string>
+    <string name="log_out">Выйти</string>
+    <string name="settings">Настройки</string>
+    <string name="language">Язык</string>
+    <string name="register">Регистрация</string>
+    <string name="email">Эл. почта</string>
+    <string name="password">Пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="username">Имя пользователя</string>
+    <string name="take_picture">Сделать фото</string>
+    <string name="upload_picture">Загрузить фото</string>
+    <string name="have_an_account_log_in">Уже есть аккаунт? Войти</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="log_in">Войти</string>
+    <string name="happy_to_see_you_again">Рады видеть вас снова!</string>
+    <string name="emaillog">Эл. почта</string>
+    <string name="log_in2">Войти</string>
+    <string name="show_us_your_knowledge">Покажи нам свои знания</string>
+    <string name="play_game">Играть</string>
+    <string name="leaderboard">Таблица лидеров</string>
+    <string name="friendly_match">Дружеский матч</string>
+    <string name="add_friends">Добавить друзей</string>
+    <string name="your_score">Ваш счет:</string>
+    <string name="game_over">Игра окончена</string>
+    <string name="back_to_home">Вернуться домой</string>
+    <string name="enter_friend_s_email">Введите email друга</string>
+    <string name="friend_requests">Запросы в друзья:</string>
+    <string name="welcome_to_trivia">Добро пожаловать в викторину!</string>
+    <string name="registerMain">Регистрация</string>
+    <string name="login">Войти</string>
+    <string name="home">Главная</string>
+    <string name="sign_out">выйти</string>
+
+</resources>

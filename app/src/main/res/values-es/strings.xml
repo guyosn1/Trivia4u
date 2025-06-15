@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trivia versión 2</string>
+    <string name="music">Música</string>
+    <string name="sound_effects">Efectos de sonido</string>
+    <string name="vibration">Vibración</string>
+    <string name="how_to_play">Cómo jugar</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="settings">Configuraciones</string>
+    <string name="language">Idioma</string>
+    <string name="register">Registrar</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="repeat_password">Repetir contraseña</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="take_picture">Tomar foto</string>
+    <string name="upload_picture">Subir foto</string>
+    <string name="have_an_account_log_in">¿Tienes una cuenta? Iniciar sesión</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="log_in">Iniciar sesión</string>
+    <string name="happy_to_see_you_again">¡Feliz de verte de nuevo!</string>
+    <string name="emaillog">Correo electrónico</string>
+    <string name="log_in2">Iniciar sesión</string>
+    <string name="show_us_your_knowledge">Muéstranos tu conocimiento</string>
+    <string name="play_game">Jugar</string>
+    <string name="leaderboard">Tabla de posiciones</string>
+    <string name="friendly_match">Partido amistoso</string>
+    <string name="add_friends">Agregar amigos</string>
+    <string name="your_score">Tu puntuación:</string>
+    <string name="game_over">Juego terminado</string>
+    <string name="back_to_home">Volver al inicio</string>
+    <string name="enter_friend_s_email">Introduce el correo del amigo</string>
+    <string name="friend_requests">Solicitudes de amistad:</string>
+    <string name="welcome_to_trivia">¡Bienvenido a trivia!</string>
+    <string name="registerMain">Registrar</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="home">Inicio</string>
+    <string name="sign_out">cerrar sesión</string>
+
+</resources>

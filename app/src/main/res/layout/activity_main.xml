@@ -12,7 +12,6 @@
         android:src="@drawable/entrance_background" />
 
     <LinearLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -24,8 +23,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome to trivia!"
-            android:textSize="45dp"
+            android:text="@string/welcome_to_trivia"
+            android:textSize="45sp"
             android:layout_gravity="center"
             android:textColor="@color/white"
             android:layout_marginTop="100dp" />
@@ -36,8 +35,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="450dp"
             android:backgroundTint="#00BCD4"
-            android:text="Register"
-            android:textSize="30dp"
+            android:text="@string/registerMain"
+            android:textSize="30sp"
             android:id="@+id/btnregister"
             />
 
@@ -48,8 +47,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:backgroundTint="#00BCD4"
-            android:text="login"
-            android:textSize="30dp" />
+            android:text="@string/login"
+            android:textSize="30sp" />
 
 
     </LinearLayout>

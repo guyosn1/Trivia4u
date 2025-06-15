@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Register"
+                android:text="@string/register"
                 android:textSize="60dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp" />
@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="150dp"
-                android:hint="email"
+                android:hint="@string/email"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="password"
+                android:hint="@string/password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="repeat password"
+                android:hint="@string/repeat_password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="username"
+                android:hint="@string/username"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -92,7 +92,7 @@
                 android:id="@+id/button_add_picture"
                 android:layout_width="230dp"
                 android:layout_height="60dp"
-                android:text="Take Picture"
+                android:text="@string/take_picture"
                 android:textAllCaps="false"
                 android:insetLeft="0dp"
                 android:insetRight="0dp"
@@ -106,7 +106,7 @@
                 android:id="@+id/button_upload"
                 android:layout_width="230dp"
                 android:layout_height="60dp"
-                android:text="Upload Picture"
+                android:text="@string/upload_picture"
                 android:insetLeft="0dp"
                 android:insetRight="0dp"
                 android:textAllCaps="false"
@@ -135,7 +135,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:minHeight="48dp"
-                android:text="have an account? log in"
+                android:text="@string/have_an_account_log_in"
                 android:textColor="#194A75"
                 android:textSize="20dp" />
 
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="sign up"
+                android:text="@string/sign_up"
                 android:textSize="40dp" />
 
         </LinearLayout>

@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Locale;
 
-public class SettingsPage extends AppCompatActivity {
+public class SettingsPage extends BaseActivity {
 
     Button logoutButton, howToPlayButton;
     Spinner languageSpinner;

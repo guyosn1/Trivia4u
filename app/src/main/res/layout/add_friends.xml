@@ -11,7 +11,7 @@
         android:id="@+id/editTextFriendUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter friend's Email"
+        android:hint="@string/enter_friend_s_email"
         android:inputType="textPersonName"
         android:minHeight="48dp" />
 
@@ -25,7 +25,7 @@
         android:backgroundTint="@color/black"/>
 
     <TextView
-        android:text="Friend Requests:"
+        android:text="@string/friend_requests"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
