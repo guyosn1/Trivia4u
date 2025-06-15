@@ -1,103 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:background="@drawable/settings_background">
+    android:layout_width="match_parent"
+    >
 
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/settings_background" />
 
-        <!-- Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textColor="#00BCD4"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="32dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp" >
 
-        <!-- Music Switch -->
-        <Switch
-            android:id="@+id/switch_music"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:minHeight="48dp"
-            android:text="Music"
-            android:textSize="18sp"
-            android:textColor="#00BCD4" />
+            android:orientation="vertical">
 
-        <!-- Sound Effects Switch -->
-        <Switch
-            android:id="@+id/switch_sfx"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:checked="true"
-            android:minHeight="48dp"
-            android:text="Sound Effects"
-            android:textSize="18sp"
-            android:textColor="#00BCD4" />
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="#00BCD4"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp" />
 
-        <!-- Vibration Switch -->
-        <Switch
-            android:id="@+id/switch_vibration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:checked="true"
-            android:minHeight="48dp"
-            android:text="Vibration"
-            android:textSize="18sp"
-            android:textColor="#00BCD4" />
+            <!-- Music Switch -->
+            <Switch
+                android:id="@+id/switch_music"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:text="@string/music"
+                android:textSize="18sp"
+                android:textColor="#00BCD4" />
 
-        <!-- Language Label -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Language"
-            android:textSize="18sp"
-            android:layout_marginTop="24dp"
-            android:textColor="#00BCD4" />
+            <!-- Sound Effects Switch -->
+            <Switch
+                android:id="@+id/switch_sfx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:text="@string/sound_effects"
+                android:textSize="18sp"
+                android:textColor="#00BCD4" />
 
-        <!-- Language Spinner -->
-        <Spinner
-            android:id="@+id/spinner_language"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:minHeight="48dp"
-            android:background="#00BCD4" />
+            <!-- Vibration Switch -->
+            <Switch
+                android:id="@+id/switch_vibration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checked="true"
+                android:minHeight="48dp"
+                android:text="@string/vibration"
+                android:textSize="18sp"
+                android:textColor="#00BCD4" />
 
-        <!-- How to Play Button -->
-        <Button
-            android:id="@+id/btnhowtoplay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="How to Play"
-            android:textColor="#00BCD4"
-            android:textSize="18sp"
-            android:backgroundTint="@color/black" />
+            <!-- Language Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Language"
+                android:textSize="18sp"
+                android:layout_marginTop="24dp"
+                android:textColor="#00BCD4" />
 
-        <!-- Logout Button -->
-        <Button
-            android:id="@+id/btn_logout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="#F44336"
-            android:text="Log Out"
-            android:textColor="#00BCD4"
-            android:textSize="18sp" />
-    </LinearLayout>
-</ScrollView>
+            <!-- Language Spinner -->
+            <Spinner
+                android:id="@+id/spinner_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="48dp"
+                android:background="#00BCD4" />
 
+            <!-- How to Play Button -->
+            <Button
+                android:id="@+id/btnhowtoplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/how_to_play"
+                android:textColor="#00BCD4"
+                android:textSize="18sp"
+                android:backgroundTint="@color/black" />
 
+            <!-- Logout Button -->
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#F44336"
+                android:text="@string/log_out"
+                android:textColor="#00BCD4"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
 
 

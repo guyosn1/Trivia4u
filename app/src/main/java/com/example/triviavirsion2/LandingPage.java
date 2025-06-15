@@ -80,14 +80,20 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
             }
         });
 
-        // ✅ הצגת סטריק
+        // הצגת סטריק
         showStreak();
     }
 
     private void showStreak() {
-        SharedPreferences prefs = getSharedPreferences("triviaPrefs", MODE_PRIVATE);
-        int streak = prefs.getInt("streak", 0);
-        streakTextView.setText("🔥 Streak: " + streak + " days");
+        var streakRef = database.child("users").child(firebaseAuth.getUid()).child("streak");
+        streakRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                var streak = task.getResult().getValue(Streak.class);
+                if (streak != null) {
+                    streakTextView.setText("🔥 Streak: " + streak.getDays() + " days");
+                }
+            }
+        });
     }
 
     @Override

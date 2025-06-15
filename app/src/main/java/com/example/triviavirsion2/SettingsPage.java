@@ -18,6 +18,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Locale;
 
 public class SettingsPage extends AppCompatActivity {
@@ -56,11 +59,7 @@ public class SettingsPage extends AppCompatActivity {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 if (vibrator != null && vibrator.hasVibrator()) {
                     try {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE));
-                        } else {
-                            vibrator.vibrate(100);
-                        }
+                        vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE));
                         Toast.makeText(this, "Vibration enabled", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         Toast.makeText(this, "Vibration failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -75,6 +74,7 @@ public class SettingsPage extends AppCompatActivity {
 
         // Logout button
         logoutButton.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(SettingsPage.this, MainActivity.class);
             startActivity(intent);
             finish();

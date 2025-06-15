@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.Manifest;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -38,15 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         askNotificationPerms();
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            // User is already logged in, navigate to LandingPage
-            Intent intent = new Intent(MainActivity.this, LandingPage.class);
-            startActivity(intent);
-            finish();
-        }
-
-
         loginButton = findViewById(R.id.btnlogin);
         loginButton.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, Login.class);
@@ -64,10 +56,37 @@ public class MainActivity extends AppCompatActivity {
 
     private void askNotificationPerms() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
-                    != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.POST_NOTIFICATIONS}, 1001);
+                return;
+            }
+        }
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is already logged in, navigate to LandingPage
+            Intent intent = new Intent(MainActivity.this, LandingPage.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1001) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    // User is already logged in, navigate to LandingPage
+                    Intent intent = new Intent(MainActivity.this, LandingPage.class);
+                    startActivity(intent);
+                    finish();
+                }
+            } else {
+                // Permission denied
             }
         }
     }

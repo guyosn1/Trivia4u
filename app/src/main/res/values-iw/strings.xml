@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"> טריוויה 2</string>
+    <string name="music">מוזיקה</string>
+    <string name="sound_effects">אפקטים קוליים</string>
+    <string name="vibration">רטט</string>
+    <string name="how_to_play">איך לשחק</string>
+    <string name="log_out">התנתק</string>
+    <string name="settings">הגדרות</string>
+</resources>
