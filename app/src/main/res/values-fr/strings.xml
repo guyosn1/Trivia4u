@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Version Trivia 2</string>
+    <string name="app_name">TRIVIA4U</string>
     <string name="music">Musique</string>
     <string name="sound_effects">Effets sonores</string>
     <string name="vibration">Vibration</string>
@@ -36,5 +36,6 @@
     <string name="login">Se connecter</string>
     <string name="home">Accueil</string>
     <string name="sign_out">se déconnecter</string>
+    <string name="settings2">Paramètres</string>
 
 </resources>

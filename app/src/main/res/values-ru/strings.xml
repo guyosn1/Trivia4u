@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Викторина версия 2</string>
+    <string name="app_name">TRIVIA4U</string>
     <string name="music">Музыка</string>
     <string name="sound_effects">Звуковые эффекты</string>
     <string name="vibration">Вибрация</string>
@@ -36,5 +36,6 @@
     <string name="login">Войти</string>
     <string name="home">Главная</string>
     <string name="sign_out">выйти</string>
+    <string name="settings2">Настройки</string>
 
 </resources>

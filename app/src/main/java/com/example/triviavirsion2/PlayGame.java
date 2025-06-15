@@ -253,3 +253,16 @@ public class PlayGame extends AppCompatActivity {
         return finalQuestions;
     }
 }
+
+
+/**
+ *
+ * questions
+ *      easy
+ *      medium
+ *      hard
+ *      professional
+ *      expert
+ *
+ *
+ */

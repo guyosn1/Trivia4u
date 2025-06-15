@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">גרסת טריוויה 2</string>
+    <string name="app_name">TRIVIA4U</string>
     <string name="music">מוזיקה</string>
     <string name="sound_effects">אפקטים קוליים</string>
     <string name="vibration">רטט</string>
@@ -36,6 +36,7 @@
     <string name="login">התחבר</string>
     <string name="home">דף הבית</string>
     <string name="sign_out">התנתק</string>
+    <string name="settings2">הגדרות</string>
 
 </resources>
 

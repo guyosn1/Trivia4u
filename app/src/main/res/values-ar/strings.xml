@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">نسخة المسابقة 2</string>
+    <string name="app_name">TRIVIA4U</string>
     <string name="music">الموسيقى</string>
     <string name="sound_effects">مؤثرات صوتية</string>
     <string name="vibration">اهتزاز</string>
@@ -36,4 +36,5 @@
     <string name="login">تسجيل الدخول</string>
     <string name="home">الصفحة الرئيسية</string>
     <string name="sign_out">تسجيل الخروج</string>
+    <string name="settings2">الإعدادات</string>
 </resources>

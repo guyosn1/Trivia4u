@@ -7,6 +7,11 @@
         />
 
     <item
+        android:id="@+id/menu_setting"
+        android:title="@string/settings2"
+        />
+
+    <item
         android:id="@+id/menu_signout"
         android:title="@string/sign_out"
         />

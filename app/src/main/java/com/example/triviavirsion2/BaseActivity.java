@@ -22,16 +22,20 @@ public class BaseActivity extends AppCompatActivity {
 
         if (id == R.id.menu_home) {
             Intent intent = new Intent(this, LandingPage.class);
-            // Clear stack so you don't get multiple copies on back press
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             return true;
         }
         else if (id == R.id.menu_signout) {
             Intent intent = new Intent(this, MainActivity.class);
-            // Clear stack so you don't get multiple copies on back press
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             FirebaseAuth.getInstance().signOut();
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        else if (id == R.id.menu_setting) {
+            Intent intent = new Intent(this, SettingsPage.class);
             startActivity(intent);
             return true;
         }
