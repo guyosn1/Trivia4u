@@ -86,12 +86,16 @@
             android:textColor="#FFFFFF" />
 
         <TextView
+            android:id="@+id/streakTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Day streak: "
-            android:textSize="40dp"
-            android:layout_marginTop="60dp"
-            android:textColor="#FFC107"/>
+            android:text="🔥 Streak: 0 days"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center" />
+
 
     </LinearLayout>
 </ScrollView>

@@ -1,6 +1,7 @@
 package com.example.triviavirsion2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class LandingPage extends AppCompatActivity implements View.OnClickListener {
 
     Button btnsettings, btnleaderboard, btnaddfriends, btnplaygame;
-    TextView landing_score;
+    TextView landing_score, streakTextView;
     FirebaseAuth firebaseAuth;
     DatabaseReference database;
 
@@ -34,29 +35,28 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
         btnaddfriends = findViewById(R.id.btnaddfriends);
         btnplaygame = findViewById(R.id.btnplaygame);
 
+        // טקסטים
+        landing_score = findViewById(R.id.landing_score);
+        streakTextView = findViewById(R.id.streakTextView); // חשוב לוודא שזה קיים ב-XML שלך
+
         // מאזינים לכפתורים
         btnsettings.setOnClickListener(this);
         btnleaderboard.setOnClickListener(this);
         btnaddfriends.setOnClickListener(this);
         btnplaygame.setOnClickListener(this);
 
-        landing_score = findViewById(R.id.landing_score);
-
         firebaseAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance("https://trivia-project-8533a-default-rtdb.europe-west1.firebasedatabase.app/")
                 .getReference();
 
         String uid = firebaseAuth.getUid();
-
-        // בדיקה שהמשתמש קיים לפני שממשיכים
         if (uid == null) {
             DialogHelper.showErrorDialog(LandingPage.this, "Error", "User not logged in.");
             return;
         }
 
-        // קבלת ניקוד אם הגיע ממסך אחר
+        // ניקוד מה-intent
         int addedScore = getIntent().getIntExtra("score", -1);
-
         DatabaseReference ref = database.child("users").child(uid).child("score");
 
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -79,6 +79,15 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
                 DialogHelper.showErrorDialog(LandingPage.this, "Error", "Failed to update score.");
             }
         });
+
+        // ✅ הצגת סטריק
+        showStreak();
+    }
+
+    private void showStreak() {
+        SharedPreferences prefs = getSharedPreferences("triviaPrefs", MODE_PRIVATE);
+        int streak = prefs.getInt("streak", 0);
+        streakTextView.setText("🔥 Streak: " + streak + " days");
     }
 
     @Override
@@ -94,7 +103,3 @@ public class LandingPage extends AppCompatActivity implements View.OnClickListen
         }
     }
 }
-
-
-
-

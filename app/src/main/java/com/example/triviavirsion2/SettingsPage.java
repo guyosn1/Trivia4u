@@ -22,7 +22,7 @@ import java.util.Locale;
 
 public class SettingsPage extends AppCompatActivity {
 
-    Button logoutButton;
+    Button logoutButton, howToPlayButton;
     Spinner languageSpinner;
     Switch vibrationSwitch;
 
@@ -35,14 +35,18 @@ public class SettingsPage extends AppCompatActivity {
         loadLocale();
         setContentView(R.layout.settings_page);
 
+        // Find views
         logoutButton = findViewById(R.id.btn_logout);
-        languageSpinner = findViewById(R.id.spinner_language);
+        howToPlayButton = findViewById(R.id.btnhowtoplay);
         vibrationSwitch = findViewById(R.id.switch_vibration);
+        languageSpinner = findViewById(R.id.spinner_language);
 
+        // Load vibration state
         SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
         boolean isVibrationEnabled = prefs.getBoolean("vibration_enabled", true);
         vibrationSwitch.setChecked(isVibrationEnabled);
 
+        // Vibration toggle
         vibrationSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("vibration_enabled", isChecked);
@@ -62,21 +66,27 @@ public class SettingsPage extends AppCompatActivity {
                         Toast.makeText(this, "Vibration failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(this, "Vibration not supported on this device", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Vibration not supported", Toast.LENGTH_SHORT).show();
                 }
             } else {
                 Toast.makeText(this, "Vibration disabled", Toast.LENGTH_SHORT).show();
             }
         });
 
+        // Logout button
         logoutButton.setOnClickListener(view -> {
             Intent intent = new Intent(SettingsPage.this, MainActivity.class);
             startActivity(intent);
             finish();
         });
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, languages);
+        // How to Play button (optional)
+        howToPlayButton.setOnClickListener(view -> {
+            Toast.makeText(this, "Coming soon!", Toast.LENGTH_SHORT).show();
+        });
+
+        // Language spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, languages);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         languageSpinner.setAdapter(adapter);
 
